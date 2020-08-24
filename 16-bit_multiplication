@@ -1,0 +1,9 @@
+
+/*to multiply 16-bit binary numbers*/
+
+AREA    16-bit-mult, CODE, READONLY
+ENTRY
+start
+
+Value   DCD     &FF                            ; Value to be complemented
+Result  DCD     &ABCD1234              ; Storage for result

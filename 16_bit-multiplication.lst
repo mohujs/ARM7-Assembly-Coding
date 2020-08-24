@@ -1,0 +1,67 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;//* To find the multiplication of two 32 bit number *//
+                       
+    2 00000000                 AREA             bit_multiplication, CODE, READO
+NLY
+    3 00000000         ENTRY
+    4 00000000         MAIN
+    5 00000000 E3A00101        MOV              R0, #0x40000000
+    6 00000004 E1D020B0        LDRH             R2,[R0]
+    7 00000008 E3A01119        MOV              R1, #0x40000006
+    8 0000000C E5D13000        LDRB             R3, [R1]
+    9 00000010 E0050392        MUL              R5, R2, R3
+   10 00000014 E3A04171        MOV              R4, #0x4000001C
+   11 00000018 E5845000        STR              R5, [R4]
+   12 0000001C         
+   13 0000001C EAFFFFFE 
+                       stop    B                stop
+   14 00000020                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\16_bit-multiplication.
+d -o.\16_bit-multiplication.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\
+Include -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\16_bi
+t-multiplication.lst 16_Bit-Multiplication.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 3 in file 16_Bit-Multiplication.asm
+   Uses
+      None
+Comment: ENTRY unused
+MAIN 00000000
+
+Symbol: MAIN
+   Definitions
+      At line 4 in file 16_Bit-Multiplication.asm
+   Uses
+      None
+Comment: MAIN unused
+bit_multiplication 00000000
+
+Symbol: bit_multiplication
+   Definitions
+      At line 2 in file 16_Bit-Multiplication.asm
+   Uses
+      None
+Comment: bit_multiplication unused
+stop 0000001C
+
+Symbol: stop
+   Definitions
+      At line 13 in file 16_Bit-Multiplication.asm
+   Uses
+      At line 13 in file 16_Bit-Multiplication.asm
+Comment: stop used once
+4 symbols
+335 symbols in table

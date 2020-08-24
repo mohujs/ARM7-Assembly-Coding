@@ -1,0 +1,17 @@
+Dependencies for Project 'ASM_EXAMPLES', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x5209CE98)()
+F (.\Example1_32_bit_addition.asm)(0x5E1B2924)()
+F (.\equation_example.asm)(0x5E1B29C6)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--list .\equation_example.lst --xref -o .\equation_example.o --depend .\equation_example.d)
+F (.\32-bit_multiplication_1.asm)(0x5E258FBC)()
+F (.\number_of_ones_zeros.asm)(0x5E2591B1)()
+F (.\16_Bit-Multiplication.asm)(0x5E259C62)()
+F (.\average.asm)(0x5DEE71AD)()
+F (.\Example2_64_bit_addition.asm)(0x5DEE7115)()
+F (.\helloworld.asm)(0x5E25AAD5)()
+F (.\inverse_of_a_number.asm)(0x5DEE72BB)()
+F (.\max_min.asm)(0x5E25A9E6)()
+F (.\Sample.asm)(0x5DEE7012)()
+F (.\smallest_numbet.asm)(0x5E25AE3E)()
+F (.\largest_number.asm)(0x5E25AF05)()
+F (.\string_length.asm)(0x5E25E111)()
+F (.\descending_order.asm)(0x5E25E338)()

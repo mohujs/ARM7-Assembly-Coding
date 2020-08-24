@@ -1,0 +1,70 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;program to find the length of the string
+    2 00000000                 AREA             STRING_LEN,CODE, READONLY
+    3 00000000                 ENTRY
+    4 00000000 E3A00000        MOV              R0, #00
+    5 00000004 E59F1024        LDR              R1,=TEXT
+    6 00000008         
+    7 00000008 E4D12001 
+                       BACK    LDRB             R2, [R1],#01
+    8 0000000C E3520030        CMP              R2,#'0'
+    9 00000010 0A000001        BEQ              STOP
+   10 00000014 E2800001        ADD              R0, R0, #01
+   11 00000018 EAFFFFFA        B                BACK
+   12 0000001C         STOP
+   13 0000001C E3A03101        MOV              R3,#0x40000000
+   14 00000020 E5830000        STR              R0,[R3]
+   15 00000024 EF000011        SWI              &11
+   16 00000028 41 49 45 
+              54 20 30 TEXT    DCB              "AIET 0"
+   17 0000002E                 END
+              00 00 00000000 
+Command Line: --debug --xref --apcs=interwork --depend=.\string_length.d -o.\st
+ring_length.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Kei
+l_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\string_length.lst str
+ing_length.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BACK 00000008
+
+Symbol: BACK
+   Definitions
+      At line 7 in file string_length.asm
+   Uses
+      At line 11 in file string_length.asm
+Comment: BACK used once
+STOP 0000001C
+
+Symbol: STOP
+   Definitions
+      At line 12 in file string_length.asm
+   Uses
+      At line 9 in file string_length.asm
+Comment: STOP used once
+STRING_LEN 00000000
+
+Symbol: STRING_LEN
+   Definitions
+      At line 2 in file string_length.asm
+   Uses
+      None
+Comment: STRING_LEN unused
+TEXT 00000028
+
+Symbol: TEXT
+   Definitions
+      At line 16 in file string_length.asm
+   Uses
+      At line 5 in file string_length.asm
+Comment: TEXT used once
+4 symbols
+337 symbols in table

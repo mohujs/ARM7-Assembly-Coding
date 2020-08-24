@@ -1,0 +1,17 @@
+;program to find the length of the string
+  AREA  STRING_LEN,CODE, READONLY
+ ENTRY
+	MOV R0, #00
+	LDR R1,=TEXT
+
+BACK LDRB R2, [R1],#01
+	 CMP R2,#'0'
+	 BEQ STOP
+	 ADD R0, R0, #01
+	 B BACK
+STOP 
+	MOV R3,#0x40000000
+	STR R0,[R3]
+	SWI &11
+TEXT DCB "AIET 0"
+	END

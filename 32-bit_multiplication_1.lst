@@ -1,0 +1,73 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;//* To find the multiplication of two 32 bit number *//
+                        
+    2 00000000                 AREA             ADDTIN,CODE, READONLY
+    3 00000000                 ENTRY
+    4 00000000         start
+    5 00000000 E59F0008        ldr              r0,value1
+    6 00000004 E59F1008        ldr              r1,value2
+    7 00000008 E0834091        umull            r4,r3,r1,r0
+    8 0000000C EAFFFFFE 
+                       stop    B                stop
+    9 00000010 BBBBBBBB 
+                       value1  dcd              &BBBBBBBB
+   10 00000014 CCCCCCCC 
+                       value2  dcd              &CCCCCCCC
+   11 00000018                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\32-bit_multiplication_
+1.d -o.\32-bit_multiplication_1.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CM
+SIS\Include -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\3
+2-bit_multiplication_1.lst 32-bit_multiplication_1.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ADDTIN 00000000
+
+Symbol: ADDTIN
+   Definitions
+      At line 2 in file 32-bit_multiplication_1.asm
+   Uses
+      None
+Comment: ADDTIN unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 4 in file 32-bit_multiplication_1.asm
+   Uses
+      None
+Comment: start unused
+stop 0000000C
+
+Symbol: stop
+   Definitions
+      At line 8 in file 32-bit_multiplication_1.asm
+   Uses
+      At line 8 in file 32-bit_multiplication_1.asm
+Comment: stop used once
+value1 00000010
+
+Symbol: value1
+   Definitions
+      At line 9 in file 32-bit_multiplication_1.asm
+   Uses
+      At line 5 in file 32-bit_multiplication_1.asm
+Comment: value1 used once
+value2 00000014
+
+Symbol: value2
+   Definitions
+      At line 10 in file 32-bit_multiplication_1.asm
+   Uses
+      At line 6 in file 32-bit_multiplication_1.asm
+Comment: value2 used once
+5 symbols
+336 symbols in table

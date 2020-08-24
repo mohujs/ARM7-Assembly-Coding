@@ -1,0 +1,80 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; to find the smallest number in an array
+    2 00000000         
+    3 00000000                 AREA             LARGEST_NUMBER, CODE, READONLY
+    4 00000000         ENTRY
+    5 00000000 E3A05006        MOV              R5, #06     ; load the counter 
+                                                            number ; here 7 num
+                                                            bers
+    6 00000004 E3A01101        MOV              R1,#0x40000000 ; starting addre
+                                                            ss of the 1st numbe
+                                                            r
+    7 00000008 E3A02171        MOV              R2,#0x4000001C ; address for st
+                                                            oring result
+    8 0000000C E5913000        LDR              R3,[R1]     ; load the first nu
+                                                            mber
+    9 00000010 E2811004 
+                       LOOP    ADD              R1,R1,#04   ; increment the off
+                                                            set by 4
+   10 00000014 E5914000        LDR              R4,[R1]     ; load second numbe
+                                                            r
+   11 00000018 E1530004        CMP              R3, R4      ; compare
+   12 0000001C 8A000000        BHI              LOOP1       ; branch
+   13 00000020 E1A03004        MOV              R3, R4
+   14 00000024 E2555001 
+                       LOOP1   SUBS             R5,R5,#01   ; decrement the cou
+                                                            nt by 1
+   15 00000028 E3550000        CMP              R5,#00
+   16 0000002C 1AFFFFF7        BNE              LOOP
+   17 00000030 E5823000        STR              R3,[R2]     ; store the result
+   18 00000034 EF000011        SWI              0x11
+   19 00000038                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\largest_number.d -o.\l
+argest_number.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\K
+eil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --list=.\largest_number.lst 
+largest_number.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 4 in file largest_number.asm
+   Uses
+      None
+Comment: ENTRY unused
+LARGEST_NUMBER 00000000
+
+Symbol: LARGEST_NUMBER
+   Definitions
+      At line 3 in file largest_number.asm
+   Uses
+      None
+Comment: LARGEST_NUMBER unused
+LOOP 00000010
+
+Symbol: LOOP
+   Definitions
+      At line 9 in file largest_number.asm
+   Uses
+      At line 16 in file largest_number.asm
+Comment: LOOP used once
+LOOP1 00000024
+
+Symbol: LOOP1
+   Definitions
+      At line 14 in file largest_number.asm
+   Uses
+      At line 12 in file largest_number.asm
+Comment: LOOP1 used once
+4 symbols
+335 symbols in table
